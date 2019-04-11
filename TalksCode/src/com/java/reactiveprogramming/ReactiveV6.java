@@ -13,14 +13,13 @@ public class ReactiveV6 {
 	static Callable<Integer> callable = () -> {
 		
 		for(int i = 0;i < 5;i++) {
-	        	contador++;
-	            try {
-	                Thread.sleep(1000);
-	                System.out.println("Contador del hilo: " + Thread.currentThread().getName() + " total: " + contador);
-	            } catch (InterruptedException e) {
-	                // TODO Auto-generated catch block
-	                e.printStackTrace();
-	            }
+	    	contador++;
+	        try {
+	            Thread.sleep(1000);
+	            System.out.println("Contador del hilo: " + Thread.currentThread().getName() + " total: " + contador);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
 	             
 		}         
 	    
@@ -36,7 +35,10 @@ public class ReactiveV6 {
         Future<Integer> resultado = servicio.submit(callable);
         Future<Integer> resultado2 = servicio.submit(callable);	
         
-		
+        if(resultado.isDone() && resultado.isDone()) {
+        	System.out.println("Primer resultado: " + resultado);
+        	System.out.println("Segundo resultado: " + resultado);
+        }
 		System.out.println("Termino.");
 	}
 	

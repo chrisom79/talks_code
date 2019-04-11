@@ -21,10 +21,10 @@ public class ReactiveV5 {
 		try {
 			while(internal < 10) {
 				Thread.sleep(1000);
-				System.out.println("Alive #: "+Thread.currentThread().getName()+" "+Thread.currentThread().hashCode()+" "+count++);
+				System.out.println("Thread: "+Thread.currentThread().getName()+" "+Thread.currentThread().hashCode()+" "+count++);
 				if(count % 10 == 0) {
-					System.out.println("Trying sleep "+Thread.currentThread().getName());
-					Thread.sleep(5000);
+					System.out.println("Trying sleep thread "+Thread.currentThread().getName());
+					Thread.sleep(3000);
 				}
 				internal++;
 			}
@@ -55,8 +55,6 @@ public class ReactiveV5 {
 				t3.start();
 				t2.start();
 				
-				
-				
 				t1.join();
 				t2.join();
 				t3.join();
@@ -64,7 +62,6 @@ public class ReactiveV5 {
 			}
 			
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

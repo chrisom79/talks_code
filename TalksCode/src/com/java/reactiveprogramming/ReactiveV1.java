@@ -1,8 +1,7 @@
 package com.java.reactiveprogramming;
 
 public class ReactiveV1 {
-	public static Boolean flag;
-	
+	// Este NO
 	static Thread  thread1 = new Thread(() -> {System.out.println("Running thread 1");});
 	static Thread  thread2 = new Thread(() -> {System.out.println("Running thread 2");});
 	

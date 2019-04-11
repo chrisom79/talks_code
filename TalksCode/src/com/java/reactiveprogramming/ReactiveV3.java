@@ -15,7 +15,6 @@ public class ReactiveV3 {
 						System.out.println("Counting: " + count++);	
 				}
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			lock.notifyAll();
@@ -38,7 +37,6 @@ public class ReactiveV3 {
 			thread1.join();
 			thread2.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

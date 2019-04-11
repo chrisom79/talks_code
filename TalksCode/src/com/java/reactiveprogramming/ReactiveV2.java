@@ -12,7 +12,6 @@ public static Boolean flag = Boolean.FALSE;
 				Thread.sleep(1000);
 				System.out.println("Alive: " + count++);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
@@ -24,7 +23,7 @@ public static Boolean flag = Boolean.FALSE;
 		if(!flag) {
 			System.out.println("Running thread 2");
 		}
-		});
+	});
 	
 	public static void main(String[] args) {
 		System.out.println("Iniciando...");
@@ -32,13 +31,12 @@ public static Boolean flag = Boolean.FALSE;
 		try {
 			thread1.start();
 			System.out.println("1. Flag: " + flag);
-			thread1.sleep(5000);
+			thread1.sleep(3000);
 			thread2.start();
 			System.out.println("2. Flag: " + flag);
 			thread1.join();
 			thread2.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
